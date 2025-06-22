@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Admission - HTR COMPUTER EDUCATION</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-xl mx-auto mt-10 bg-white shadow-md p-6 rounded-xl">
+    <h1 class="text-2xl font-bold mb-4 text-center">Student Admission Form</h1>
+    <form id="admissionForm" class="space-y-4">
+      <input type="text" id="name" placeholder="Full Name" required class="w-full border p-2 rounded" />
+      <input type="email" id="email" placeholder="Email" required class="w-full border p-2 rounded" />
+      <input type="tel" id="phone" placeholder="Phone Number" required class="w-full border p-2 rounded" />
+      <input type="text" id="course" placeholder="Course Name" required class="w-full border p-2 rounded" />
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Admission</button>
+    </form>
+    <p id="result" class="mt-4 text-green-600 font-medium"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('admissionForm');
+    const result = document.getElementById('result');
+
+    function generateRollNo() {
+      const lastRoll = localStorage.getItem("lastRoll") || 1000;
+      const newRoll = parseInt(lastRoll) + 1;
+      localStorage.setItem("lastRoll", newRoll);
+      return "HTR" + newRoll;
+    }
+
+    function generatePassword(length = 6) {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return password;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const course = document.getElementById('course').value;
+
+      const roll = generateRollNo();
+      const password = generatePassword();
+
+      const student = { name, email, phone, course, roll, password };
+
+      // Save to localStorage
+      const allStudents = JSON.parse(localStorage.getItem("students") || "[]");
+      allStudents.push(student);
+      localStorage.setItem("students", JSON.stringify(allStudents));
+
+      result.innerHTML = `🎉 Admission Successful!<br>📘 Your Roll No: <strong>${roll}</strong><br>🔐 Password: <strong>${password}</strong><br><a href="login.html" class="text-blue-600 underline">Go to Login</a>`;
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
