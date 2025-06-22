@@ -1,189 +1,53 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HTR COMPUTER EDUCATION</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 font-sans">  <!-- Navigation Bar -->  <nav class="bg-white shadow-md sticky top-0 z-50">
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="text-xl font-bold text-blue-700">HTR COMPUTER EDUCATION</div><ul class="hidden md:flex space-x-6 text-gray-800 font-medium">
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-house-door-fill"></i><a href="#">Home</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-info-circle-fill"></i><a href="aboutus.html">About Us</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-book-fill"></i><a href="#">Courses</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-laptop-fill"></i><a href="#">E-Learning</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-file-earmark-text-fill"></i><a href="#">Admission Form</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-building"></i><a href="#">Franchise</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-person-circle"></i><a href="#">Student Login</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-telephone-fill"></i><a href="#">Contact Us</a>
-    </li>
-  </ul>
+      <div class="text-xl font-bold text-blue-700">HTR COMPUTER EDUCATION</div>
+      <ul class="hidden md:flex space-x-6 text-gray-800 font-medium">
+        <li><a href="#" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
+        <li><a href="aboutus.html" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><span>About Us</span></a></li>
+        <!-- बाकी लिंक ऐसे ही रखें -->
+      </ul>
 
-  <!-- Mobile menu button -->
-  <button class="md:hidden text-gray-700" id="mobile-menu-toggle">
-    <i class="bi bi-list text-2xl"></i>
-  </button>
-</div>
+      <button class="md:hidden text-gray-700" id="mobile-menu-toggle">
+        <i class="bi bi-list text-2xl"></i>
+      </button>
+    </div>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-  <ul class="space-y-4 text-gray-800 font-medium">
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-house-door-fill"></i><a href="#">Home</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-info-circle-fill"></i><a href="#">About Us</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-book-fill"></i><a href="#">Courses</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-laptop-fill"></i><a href="#">E-Learning</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-file-earmark-text-fill"></i><a href="#">Admission Form</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-building"></i><a href="#">Franchise</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-person-circle"></i><a href="#">Student Login</a>
-    </li>
-    <li class="flex items-center space-x-2 hover:text-blue-600">
-      <i class="bi bi-telephone-fill"></i><a href="#">Contact Us</a>
-    </li>
-  </ul>
-</div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-4 text-gray-800 font-medium">
+        <li><a href="#" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
+        <li><a href="aboutus.html" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><span>About Us</span></a></li>
+        <!-- बाकी लिंक वैसे ही कॉपी करें -->
+      </ul>
+    </div>
+  </nav>
 
-  </nav>  <script>
+  <!-- Your Main Content -->
+  <main class="max-w-5xl mx-auto p-4">
+    <h1 class="text-2xl font-bold text-center text-blue-700 mt-10">Welcome to HTR COMPUTER EDUCATION</h1>
+    <p class="mt-4 text-gray-700 text-center">Digital India के लिए डिजिटल शिक्षा।</p>
+  </main>
+
+  <!-- Script for mobile menu toggle -->
+  <script>
     const toggleButton = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-
     toggleButton.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
   </script>
-  <!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <title>CSC जरूरी वेबसाइट गाइड</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      text-align: center;
-      color: #007bff;
-    }
-    h2 {
-      color: #343a40;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: square;
-      margin-left: 20px;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      background: #ffffff;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
-
-  <h1>ग्राहक सेवा केंद्र (CSC) के लिए जरूरी वेबसाइट गाइड</h1>
-
-  <div class="section">
-    <h2>🟢 CSC से जुड़ी वेबसाइट</h2>
-    <ul>
-      <li><a href="https://register.csc.gov.in/" target="_blank">CSC में पंजीकरण</a></li>
-      <li><a href="https://digitalseva.csc.gov.in/" target="_blank">CSC लॉगिन डैशबोर्ड</a></li>
-      <li><a href="https://www.cscentrepreneur.in/" target="_blank">TEC Certificate</a></li>
-      <li><a href="https://digitalseva.csc.gov.in/" target="_blank">CSC Certificate डाउनलोड</a></li>
-      <li><a href="https://services.csccloud.in/" target="_blank">CSC सर्विस लिस्ट</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>🟠 सरकारी सेवाएं</h2>
-    <ul>
-      <li><a href="https://uidai.gov.in/" target="_blank">आधार सेवा</a></li>
-      <li><a href="https://www.onlineservices.nsdl.com/" target="_blank">पैन कार्ड सेवा</a></li>
-      <li><a href="https://voterportal.eci.gov.in/" target="_blank">वोटर ID</a></li>
-      <li><a href="https://nfsa.gov.in/" target="_blank">राशन कार्ड (NFSA)</a></li>
-      <li><a href="https://portal2.passportindia.gov.in/" target="_blank">पासपोर्ट सेवा</a></li>
-      <li><a href="https://crsorgi.gov.in/" target="_blank">जन्म/मृत्यु प्रमाणपत्र</a></li>
-      <li><a href="http://edistrict.up.gov.in/" target="_blank">आय/जाति/निवास प्रमाणपत्र (UP)</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>🟡 बैंकिंग सेवाएं</h2>
-    <ul>
-      <li><a href="https://digitalseva.csc.gov.in/" target="_blank">DigiPay (CSC बैंकिंग)</a></li>
-      <li><a href="https://pmjdy.gov.in/" target="_blank">PM जन धन योजना</a></li>
-      <li><a href="https://unifiedportal-mem.epfindia.gov.in/" target="_blank">PF Withdrawal (EPFO)</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>🔵 शिक्षा और कोर्सेज</h2>
-    <ul>
-      <li><a href="https://student.nielit.gov.in/" target="_blank">NIELIT (CCC)</a></li>
-      <li><a href="https://www.ncs.gov.in/" target="_blank">NCS पोर्टल</a></li>
-      <li><a href="https://www.digilocker.gov.in/" target="_blank">DigiLocker</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>🟣 स्वास्थ्य सेवाएं</h2>
-    <ul>
-      <li><a href="https://pmjay.gov.in/" target="_blank">आयुष्मान भारत</a></li>
-      <li><a href="https://healthid.ndhm.gov.in/" target="_blank">ABHA Health ID</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>🟤 बीमा सेवाएं</h2>
-    <ul>
-      <li><a href="https://jansuraksha.gov.in/" target="_blank">PMSBY / PMJJBY</a></li>
-      <li><a href="https://rap.csccloud.in/" target="_blank">CSC RAP बीमा</a></li>
-    </ul>
-  </div>
 
 </body>
 </html>
-  
-  </body>
-  </html>
