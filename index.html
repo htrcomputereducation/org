@@ -3,57 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HTR COMPUTER EDUCATION</title>
+  <title>HTR COMPUTER EDUCATION - Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
 
-  <!-- Navigation Bar -->
-  <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="text-xl font-bold text-blue-700">HTR COMPUTER EDUCATION</div>
-      <ul class="hidden md:flex space-x-6 text-gray-800 font-medium">
-        <li><a href="#" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
-        <li><a href="aboutus.html" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><span>About Us</span></a></li>
-        <li><a href="aboutus.html" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><span>About Us</span></a></li>
-                <a href="contact.html" class="ml-4 hover:underline">संपर्क करें</a>
-        <!-- बाकी लिंक ऐसे ही रखें -->
-      </ul>
-
-      <button class="md:hidden text-gray-700" id="mobile-menu-toggle">
-        <i class="bi bi-list text-2xl"></i>
-      </button>
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo and Title -->
+    <div class="flex items-center space-x-2">
+      <img src="htr-logo.png" alt="Logo" class="h-12 w-12 rounded-full border border-blue-500">
+      <span class="text-2xl font-bold text-blue-700">HTR COMPUTER EDUCATION</span>
     </div>
+    
+    <!-- Navigation Menu -->
+    <ul class="hidden md:flex space-x-6 text-gray-800 font-medium">
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-house-door-fill"></i><a href="index.html">Home</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><a href="about.html">About Us</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-book-fill"></i><a href="courses.html">Courses</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-laptop-fill"></i><a href="resume.html">Resume</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-file-earmark-text-fill"></i><a href="admission.html">Admission</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-building"></i><a href="franchise.html">Franchise</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-person-circle"></i><a href="login.html">Student Login</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-telephone-fill"></i><a href="contact.html">Contact Us</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-telephone-fill"></i><a href="adca.html">ADCA</a></li>
+    </ul>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <ul class="space-y-4 text-gray-800 font-medium">
-        <li><a href="#" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-house-door-fill"></i><span>Home</span></a></li>
-        <li><a href="aboutus.html" class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><span>About Us</span></a></li>
-        <!-- बाकी लिंक वैसे ही कॉपी करें -->
-      </ul>
-    </div>
-  </nav>
+    <!-- Mobile menu button -->
+    <button class="md:hidden text-gray-700" id="mobile-menu-toggle">
+      <i class="bi bi-list text-2xl"></i>
+    </button>
+  </div>
 
-  <!-- Your Main Content -->
-  <main class="max-w-5xl mx-auto p-4">
-    <h1 class="text-2xl font-bold text-center text-blue-700 mt-10">Welcome to HTR COMPUTER EDUCATION</h1>
-    <p class="mt-4 text-gray-700 text-center">Digital India के लिए डिजिटल शिक्षा।</p>
-  </main>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+    <ul class="space-y-4 text-gray-800 font-medium">
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-house-door-fill"></i><a href="index.html">Home</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-info-circle-fill"></i><a href="about.html">About Us</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-book-fill"></i><a href="courses.html">Courses</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-laptop-fill"></i><a href="resume.html">Resume</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-file-earmark-text-fill"></i><a href="admission.html">Admission</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-building"></i><a href="franchise.html">Franchise</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-person-circle"></i><a href="login.html">Student Login</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-telephone-fill"></i><a href="contact.html">Contact Us</a></li>
+      <li class="flex items-center space-x-2 hover:text-blue-600"><i class="bi bi-telephone-fill"></i><a href="adca.html">ADCA</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- Script for mobile menu toggle -->
-  <script>
-    const toggleButton = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    toggleButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-<p class="text-lg leading-relaxed text-gray-800">
-  <strong>HTR COMPUTER EDUCATION</strong> में आपका स्वागत है। हमारा उद्देश्य हर विद्यार्थी को डिजिटल युग की आवश्यकताओं के अनुसार प्रशिक्षित करना है। हम बुनियादी कंप्यूटर शिक्षा से लेकर उन्नत तकनीकी कोर्सेज जैसे Tally, DTP, Excel, Programming, और E-learning तक की संपूर्ण ट्रेनिंग प्रदान करते हैं। अनुभवी प्रशिक्षकों, प्रैक्टिकल लैब और प्रमाण-पत्र आधारित कोर्स के माध्यम से हम छात्रों को स्वरोजगार और नौकरी के लिए तैयार करते हैं। डिजिटल भारत की दिशा में यह हमारा एक छोटा लेकिन मजबूत कदम है।
-</p>
+<!-- Mobile Menu Script -->
+<script>
+  const toggleButton = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
 
-  
+<!-- Notice Marquee -->
+<marquee class="bg-yellow-100 py-2 text-red-700 font-semibold">
+  Admission Open for All Courses | Limited Seats Available | Join Now!
+</marquee>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-blue-100 to-blue-50 py-16 text-center">
+  <h2 class="text-4xl font-bold mb-4 text-blue-800"><i class="bi bi-laptop"></i> स्वागतम</h2>
+  <p class="text-lg text-gray-700">Best Institute for Computer Education | Learn Basic to Advanced Courses with Certification</p>
+</section>
+
+<!-- Optional Promo Images -->
+<div class="max-w-4xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-center gap-6">
+  <img src="htr-logo.png" alt="Promo Image 1" class="w-48 rounded shadow-md">
+  <img src="IMG-20250426-WA0025.jpg" alt="Promo Image 2" class="w-48 rounded shadow-md">
+</div>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white text-center py-4 mt-6">
+  <p class="text-sm">&copy; 2025 HTR COMPUTER EDUCATION. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
