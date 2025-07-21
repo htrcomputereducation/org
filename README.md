@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTR Computer Education</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo/logo.png" class="logo" alt="HTR Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="control.html">Control</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="left">
+      <h1>HTR COMPUTER</h1>
+      <p class="welcome">welcome to HTR Computer Education</p>
+      <p class="description">
+        एक प्रमुख कंप्यूटर प्रशिक्षण संस्थान है, जहाँ हम छात्रों, युवाओं और प्रोफेशनलों को गुणवत्तापूर्ण व किफायती कंप्यूटर शिक्षा प्रदान करते हैं। हमारा उद्देश्य है डिजिटल दुनिया से सभी को जोड़ना और उन्हें रोजगार के योग्य बनाना।
+      </p>
+      <p class="training">
+        <b>बेसिक कंप्यूटर ट्रेनिंग:</b><br>
+        ADCA / DCA / CCC कोर्स ऑफिस ऑटोमेशन (MS Office, Excel, PowerPoint) Tally with GST / Accounting Course, वेब डिज़ाइनिंग और प्रोफेशनल ग्राफिक्स डिज़ाइन (Photoshop, CorelDraw) और कई अन्य।
+      </p>
+    </div>
+    <div class="right">
+      <img src="images/computer-image.jpg" alt="Computer Setup">
+    </div>
+  </main>
+</body>
+</html>
