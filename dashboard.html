@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <title>Dashboard - HTR Computer</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .export-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,13 +28,36 @@
     </nav>
   </header>
 
-  <main class="main-content">
+  <main class="main-content" id="dashboardContent">
     <h1>🎉 आपका स्वागत है, <span id="studentName"></span>!</h1>
     <p>आपका कोर्स और जानकारी भविष्य में यहाँ दिखेगी।</p>
+    <button class="export-btn" onclick="exportToPDF()">📄 Export</button>
   </main>
 
+  <!-- JS Libraries for Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script>
+    // Student Name Load
     document.getElementById('studentName').textContent = localStorage.getItem('studentName') || 'स्टूडेंट';
+
+    // Export to PDF Function
+    async function exportToPDF() {
+      const { jsPDF } = window.jspdf;
+      const content = document.getElementById('dashboardContent');
+      
+      html2canvas(content).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save("HTR-Dashboard.pdf");
+      });
+    }
   </script>
 </body>
 </html>
