@@ -5,6 +5,47 @@
   <title>Dashboard - HTR Computer</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .main-content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .dashboard-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
     .export-btn {
       margin-top: 20px;
       padding: 10px 20px;
@@ -29,9 +70,16 @@
   </header>
 
   <main class="main-content" id="dashboardContent">
-    <h1>🎉 आपका स्वागत है, <span id="studentName"></span>!</h1>
-    <p>आपका कोर्स और जानकारी भविष्य में यहाँ दिखेगी।</p>
-    <button class="export-btn" onclick="exportToPDF()">📄 Export</button>
+    <div class="dashboard-card">
+      <h1>🎉 आपका स्वागत है, <span id="studentName"></span>!</h1>
+      <p>आपका कोर्स और जानकारी नीचे दी जाएगी।</p>
+      <ul>
+        <li>💻 कंप्यूटर बेसिक कोर्स</li>
+        <li>📊 टैली और एक्सेल</li>
+        <li>🖥️ ग्राफ़िक्स डिज़ाइन</li>
+      </ul>
+      <button class="export-btn" onclick="exportToPDF()">📄 PDF में सेव करें</button>
+    </div>
   </main>
 
   <!-- JS Libraries for Export -->
@@ -39,10 +87,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script>
-    // Student Name Load
     document.getElementById('studentName').textContent = localStorage.getItem('studentName') || 'स्टूडेंट';
 
-    // Export to PDF Function
     async function exportToPDF() {
       const { jsPDF } = window.jspdf;
       const content = document.getElementById('dashboardContent');
