@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>रजिस्टर - HTR Computer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Same styles from earlier */
+    .form-container {
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 50px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .form-container h2 {
+      text-align: center;
+      color: #008060;
+    }
+    .form-container input, .form-container select, .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .form-container button {
+      background-color: #008060;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo/logo.png" class="logo" alt="HTR Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="control.html">Contact</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>रजिस्ट्रेशन फॉर्म</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="पूरा नाम" required>
+      <input type="email" id="email" placeholder="ईमेल" required>
+      <input type="tel" id="mobile" placeholder="मोबाइल नंबर" required>
+      <select id="course" required>
+        <option value="">कोर्स चुनें</option>
+        <option>ADCA</option>
+        <option>DCA</option>
+        <option>CCC</option>
+      </select>
+      <button type="submit">रजिस्टर करें</button>
+    </form>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      const course = document.getElementById('course').value;
+
+      // Auto ID & Password Generate
+      const studentId = 'HTR' + Math.floor(1000 + Math.random() * 9000);
+      const password = Math.random().toString(36).slice(-6);
+
+      // Save to localStorage
+      localStorage.setItem('studentId', studentId);
+      localStorage.setItem('password', password);
+      localStorage.setItem('studentName', name);
+
+      output.innerHTML = `
+        <b>रजिस्ट्रेशन सफल!</b><br>
+        आपकी आईडी: <b>${studentId}</b><br>
+        पासवर्ड: <b>${password}</b><br><br>
+        <a href="login.html">अब लॉगिन करें</a>
+      `;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
