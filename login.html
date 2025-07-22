@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>लॉगिन - HTR Computer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-container {
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 50px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .form-container h2 {
+      text-align: center;
+      color: #008060;
+    }
+    .form-container input, .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .form-container button {
+      background-color: #008060;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo/logo.png" class="logo" alt="HTR Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="control.html">Contact</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>लॉगिन करें</h2>
+    <form id="loginForm">
+      <input type="text" id="studentId" placeholder="स्टूडेंट ID" required>
+      <input type="password" id="password" placeholder="पासवर्ड" required>
+      <button type="submit">लॉगिन</button>
+    </form>
+    <p id="loginOutput"></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginOutput = document.getElementById('loginOutput');
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const id = document.getElementById('studentId').value;
+      const pass = document.getElementById('password').value;
+
+      const savedId = localStorage.getItem('studentId');
+      const savedPass = localStorage.getItem('password');
+      const studentName = localStorage.getItem('studentName');
+
+      if (id === savedId && pass === savedPass) {
+        loginOutput.innerHTML = `<b>स्वागत है, ${studentName}!</b><br><a href="dashboard.html">डैशबोर्ड देखें</a>`;
+      } else {
+        loginOutput.innerHTML = `<span style="color:red;">ID या पासवर्ड गलत है!</span>`;
+      }
+    });
+  </script>
+</body>
+</html>
