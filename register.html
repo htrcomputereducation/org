@@ -5,7 +5,6 @@
   <title>रजिस्टर - HTR Computer</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Same styles from earlier */
     .form-container {
       background-color: white;
       color: black;
@@ -19,7 +18,9 @@
       text-align: center;
       color: #008060;
     }
-    .form-container input, .form-container select, .form-container button {
+    .form-container input,
+    .form-container select,
+    .form-container button {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
@@ -30,6 +31,15 @@
       color: white;
       border: none;
       cursor: pointer;
+    }
+    #output {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+      color: green;
+    }
+    iframe {
+      display: none; /* Google Form iframe छुपा है */
     }
   </style>
 </head>
@@ -46,7 +56,7 @@
   </header>
 
   <div class="form-container">
-    <h2>रजिस्ट्रेशन फॉर्म</h2>
+    <h2>ऑनलाइन रजिस्ट्रेशन फॉर्म</h2>
     <form id="registerForm">
       <input type="text" id="name" placeholder="पूरा नाम" required>
       <input type="email" id="email" placeholder="ईमेल" required>
@@ -62,15 +72,19 @@
     <p id="output"></p>
   </div>
 
+  <!-- Hidden iframe Google Form (will open in new tab for actual submission) -->
+  <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLSeVGmr1f7SkTfTwIxMN-SyRRRSX9OXYlDn1INgBdkkg63qvSg/viewform?embedded=true"></iframe>
+
   <script>
     const form = document.getElementById('registerForm');
     const output = document.getElementById('output');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const mobile = document.getElementById('mobile').value;
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
       const course = document.getElementById('course').value;
 
       // Auto ID & Password Generate
@@ -82,12 +96,18 @@
       localStorage.setItem('password', password);
       localStorage.setItem('studentName', name);
 
+      // Show confirmation
       output.innerHTML = `
         <b>रजिस्ट्रेशन सफल!</b><br>
         आपकी आईडी: <b>${studentId}</b><br>
         पासवर्ड: <b>${password}</b><br><br>
         <a href="login.html">अब लॉगिन करें</a>
       `;
+
+      // 🎯 Redirect user to Google Form with prefilled data
+      const gFormURL = `https://docs.google.com/forms/d/e/1FAIpQLSeVGmr1f7SkTfTwIxMN-SyRRRSX9OXYlDn1INgBdkkg63qvSg/viewform?usp=pp_url&entry.1234567890=${encodeURIComponent(name)}&entry.2345678901=${encodeURIComponent(email)}&entry.3456789012=${encodeURIComponent(mobile)}&entry.4567890123=${encodeURIComponent(course)}`;
+      window.open(gFormURL, '_blank');
+
       form.reset();
     });
   </script>
