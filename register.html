@@ -39,7 +39,7 @@
       color: green;
     }
     iframe {
-      display: none; /* Google Form iframe छुपा है */
+      display: none; /* Hidden unless needed */
     }
   </style>
 </head>
@@ -54,7 +54,10 @@
       <a href="login.html">Login</a>
     </nav>
   </header>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_O8hvKz18qieiUhn5r6Jb-31e1tPoX2uZ-yJKMHpObGcHjQ/viewform?embedded=true" width="640" height="2001" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+  <!-- ✅ Updated Google Form Embed -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCEOA_DtyVGzv0GKjVl9ALBcvzVQLam-_cKi-wWyoBNnIXdg/viewform?embedded=true" width="640" height="930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
   <div class="form-container">
     <h2>ऑनलाइन रजिस्ट्रेशन फॉर्म</h2>
     <form id="registerForm">
@@ -72,8 +75,8 @@
     <p id="output"></p>
   </div>
 
-  <!-- Hidden iframe Google Form (will open in new tab for actual submission) -->
-  <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLSeVGmr1f7SkTfTwIxMN-SyRRRSX9OXYlDn1INgBdkkg63qvSg/viewform?embedded=true"></iframe>
+  <!-- Hidden iframe for future use if needed -->
+  <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScCEOA_DtyVGzv0GKjVl9ALBcvzVQLam-_cKi-wWyoBNnIXdg/viewform?embedded=true"></iframe>
 
   <script>
     const form = document.getElementById('registerForm');
@@ -87,16 +90,13 @@
       const mobile = document.getElementById('mobile').value.trim();
       const course = document.getElementById('course').value;
 
-      // Auto ID & Password Generate
       const studentId = 'HTR' + Math.floor(1000 + Math.random() * 9000);
       const password = Math.random().toString(36).slice(-6);
 
-      // Save to localStorage
       localStorage.setItem('studentId', studentId);
       localStorage.setItem('password', password);
       localStorage.setItem('studentName', name);
 
-      // Show confirmation
       output.innerHTML = `
         <b>रजिस्ट्रेशन सफल!</b><br>
         आपकी आईडी: <b>${studentId}</b><br>
@@ -104,8 +104,8 @@
         <a href="login.html">अब लॉगिन करें</a>
       `;
 
-      // 🎯 Redirect user to Google Form with prefilled data
-      const gFormURL = `https://docs.google.com/forms/d/e/1FAIpQLSeVGmr1f7SkTfTwIxMN-SyRRRSX9OXYlDn1INgBdkkg63qvSg/viewform?usp=pp_url&entry.1234567890=${encodeURIComponent(name)}&entry.2345678901=${encodeURIComponent(email)}&entry.3456789012=${encodeURIComponent(mobile)}&entry.4567890123=${encodeURIComponent(course)}`;
+      // Redirect to Google Form manually filled
+      const gFormURL = `https://docs.google.com/forms/d/e/1FAIpQLScCEOA_DtyVGzv0GKjVl9ALBcvzVQLam-_cKi-wWyoBNnIXdg/viewform`;
       window.open(gFormURL, '_blank');
 
       form.reset();
