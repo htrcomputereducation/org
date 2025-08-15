@@ -39,7 +39,7 @@
       color: green;
     }
     iframe {
-      display: none; /* Hidden unless needed */
+      display: none;
     }
   </style>
 </head>
@@ -54,9 +54,6 @@
       <a href="login.html">Login</a>
     </nav>
   </header>
-
-  <!-- ✅ Updated Google Form Embed -->
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCEOA_DtyVGzv0GKjVl9ALBcvzVQLam-_cKi-wWyoBNnIXdg/viewform?embedded=true" width="640" height="930" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
   <div class="form-container">
     <h2>ऑनलाइन रजिस्ट्रेशन फॉर्म</h2>
@@ -74,9 +71,6 @@
     </form>
     <p id="output"></p>
   </div>
-
-  <!-- Hidden iframe for future use if needed -->
-  <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScCEOA_DtyVGzv0GKjVl9ALBcvzVQLam-_cKi-wWyoBNnIXdg/viewform?embedded=true"></iframe>
 
   <script>
     const form = document.getElementById('registerForm');
@@ -104,9 +98,9 @@
         <a href="login.html">अब लॉगिन करें</a>
       `;
 
-      // Redirect to Google Form manually filled
-      const gFormURL = `https://docs.google.com/forms/d/e/1FAIpQLScCEOA_DtyVGzv0GKjVl9ALBcvzVQLam-_cKi-wWyoBNnIXdg/viewform`;
-      window.open(gFormURL, '_blank');
+      // ✅ अब Google Form की जगह Razorpay पेमेंट लिंक ओपन होगा
+      const paymentURL = https://pages.razorpay.com/pl_R3igpO8J3cLPgC/view;
+      window.open(paymentURL, '_blank');
 
       form.reset();
     });
